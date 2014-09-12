@@ -55,9 +55,7 @@ class Bubblesort
 
                      end
                  end 
-          end             
-
-           
+          end           
       end
 
       def get()
