@@ -1,4 +1,4 @@
-#Sorting By Shell @thinkphp
+#QuickSort @thinkphp
 class QuickSort
 
       def initialize( arr )
