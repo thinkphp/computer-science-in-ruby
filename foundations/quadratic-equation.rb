@@ -4,13 +4,9 @@ def quadratic
 
     arr = []
 
-    f1 = "quadratic.in"
+    f1, f2 = "quadratic.in", "quadratic.out"
 
-    f2 = "quadratic.out"
-
-    f_in = File.open(f1, "r")
-
-    f_out = File.open(f2, "w")
+    f_in, f_out = File.open(f1, "r"), File.open(f2, "w")
 
     i = 1
 
