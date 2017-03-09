@@ -1,4 +1,10 @@
-#Ruby Looping Methods -> n.times
+# Ruby Looping Methods -> n.times
+#
+# Complexity 
+#            -> best-case O(n)
+#            -> worst-case O(n^2) 
+#            -> average-vase O(n^2) 
+
 def bubblesort(vector)
 
      n = vector.length
