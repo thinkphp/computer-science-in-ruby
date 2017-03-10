@@ -4,9 +4,7 @@ def monte_carlo(n)
 
     n.times do
 
-         x = Random.rand()
-
-         y = Random.rand()
+         x , y = Random.rand(), Random.rand()
 
          z = x**2 + y**2
 
