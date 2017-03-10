@@ -59,6 +59,8 @@ def quadratic
 
     f_in.close()
 
+    f_out.close()
+
 end
 
 quadratic
