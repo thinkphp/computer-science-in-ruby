@@ -6,3 +6,4 @@ Basics Algorithms
 3. Fibonacci with tail recursion https://ideone.com/MtPoNT
 4. Check Order (Ascending, Descending or Unordered) https://ideone.com/whODqP
 5. Mountain https://ideone.com/Pkrd1w
+6. Read Matrix Recursively https://ideone.com/vCLPQV
