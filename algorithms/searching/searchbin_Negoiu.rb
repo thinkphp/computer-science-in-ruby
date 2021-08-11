@@ -64,8 +64,8 @@ def main
     end
     sort(arr)
     ans = searchBin_rec(arr, key)
-    if ans != -1
-       p "Found on position: !", hash[key]
+    if ans != -1       
+       p "Found on position: #{hash[key]}!"
     else
       p "Not Found!"
     end
