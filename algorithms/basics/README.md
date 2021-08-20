@@ -8,3 +8,4 @@ Basics Algorithms
 5. Mountain https://ideone.com/Pkrd1w
 6. Read Matrix Recursively https://ideone.com/vCLPQV
 7. Sorting without comparison of the elements https://ideone.com/AeV1ds
+8. Permutation https://ideone.com/y1irJg
