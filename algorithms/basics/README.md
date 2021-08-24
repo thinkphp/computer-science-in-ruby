@@ -10,3 +10,4 @@ Basics Algorithms
 7. Sorting without comparison of the elements https://ideone.com/AeV1ds
 8. Permutation https://ideone.com/y1irJg
 9. Check Order Array https://ideone.com/ehCIZ1
+10. Cyclic Permutation https://ideone.com/Jvdd48
