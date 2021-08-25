@@ -11,3 +11,4 @@ Basics Algorithms
 8. Permutation https://ideone.com/y1irJg
 9. Check Order Array https://ideone.com/ehCIZ1
 10. Cyclic Permutation https://ideone.com/Jvdd48
+11. Counting Sort Algorithm https://ideone.com/SgWDrV
