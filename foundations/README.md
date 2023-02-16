@@ -1,1 +1,1 @@
-## Basic Algorithms in Ruby language.
+## Algorithms Design
