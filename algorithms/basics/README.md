@@ -12,3 +12,4 @@ Basics Algorithms
 9. Check Order Array https://ideone.com/ehCIZ1
 10. Cyclic Permutation https://ideone.com/Jvdd48
 11. Counting Sort Algorithm https://ideone.com/SgWDrV
+12. Longest Consecutive Subsequence https://ideone.com/4h6rqK
