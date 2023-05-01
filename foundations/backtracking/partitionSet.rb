@@ -1,9 +1,19 @@
+def getMax(level)
+	max = 0
+	for i in 1..level-1
+	   if $st[i] > max
+	   	max = $st[i]
+	   end	
+    end
+    return max
+end    
+	
 def init(level)
     $st[level] = 0
 end
 
 def succ(level)
-    if $st[level]<$st[level-1]+1
+    if $st[level]<getMax(level)+1
       $st[level]+=1
       return true
     end
@@ -18,6 +28,8 @@ def sol(level)
 end
 
 def printf()
+  $cnt +=1
+  print $cnt
   takemax = $st.max()
   for i in 1..takemax
       print "{"
@@ -44,8 +56,10 @@ def bk(level)
     end
 end
 def partitions
+  $cnt = 0	
   $n = gets.chomp.to_i
   $st = [0] * ($n+1)
-  bk(1)
+  $st[1] = 1
+  bk(2)
 end
 partitions
