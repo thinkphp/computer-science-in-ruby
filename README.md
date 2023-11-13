@@ -23,6 +23,7 @@ resizeable; you can append elements to them and they grow as needed. If you assi
 value to an element beyond the end of the array, the array is automatically extended
 with nil elements. (It is an error, however, to assign a value to an element before the
 beginning of an array.)
+```
 An array literal is a comma-separated list of values, enclosed in square brackets:
 [1, 2, 3] # An array that holds three Fixnum objects
 [-10...0, 0..10,] # An array of two ranges; trailing commas are allowed
@@ -35,6 +36,7 @@ short strings without spaces:
 words = %w[this is a test] # Same as: ['this', 'is', 'a', 'test']
 open = %w| ( [ { < | # Same as: ['(', '[', '{', '<']
 white = %W(\s \t \r \n) # Same as: ["\s", "\t", "\r", "\n"]
+```
 %w and %W introduce an array literal, much like %q and %Q introduce a String literal. In
 particular, the delimiter rules for %w and %W are the same as for %q and %Q. Within the
 delimiters, no quotation marks are required around the array element strings, and no
