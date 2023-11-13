@@ -64,6 +64,94 @@ a[-a.size] # Another way to query the first element
 a[8] # Querying beyond the end returns nil
 a[-8] # Querying before the start returns nil, too
 ```
+
+All of the expressions above, except for the last, can also be used on the lefthand side
+of an assignment:
+```
+a[0] = "zero" # a is ["zero", 1, 4, 9, 16]
+a[-1] = 1..16 # a is ["zero", 1, 4, 9, 1..16]
+a[8] = 64 # a is ["zero", 1, 4, 9, 1..16, nil, nil, nil, 64]
+a[-10] = 100 # Error: can't assign before the start of an array
+```
+Like strings, arrays can also be indexed with two integers that represent a starting index
+and a number of elements, or a Range object. In either case, the expression returns the
+specified subarray:
+```
+a = ('a'..'e').to_a # Range converted to ['a', 'b', 'c', 'd', 'e']
+a[0,0] # []: this subarray has zero elements
+a[1,1] # ['b']: a one-element array
+a[-2,2] # ['d','e']: the last two elements of the array
+a[0..2] # ['a', 'b', 'c']: the first three elements
+a[-2..-1] # ['d','e']: the last two elements of the array
+a[0...-1] # ['a', 'b', 'c', 'd']: all but the last element
+```
+
+When used on the lefthand side of an assignment, a subarray can be replaced by the
+elements of the array on the righthand side. This basic operation works for insertions
+and deletions as well:
+
+```
+a[0,2] = ['A', 'B'] # a becomes ['A', 'B', 'c', 'd', 'e']
+a[2...5]=['C', 'D', 'E'] # a becomes ['A', 'B', 'C', 'D', 'E']
+a[0,0] = [1,2,3] # Insert elements at the beginning of a
+a[0..2] = [] # Delete those elements
+a[-1,1] = ['Z'] # Replace last element with another
+a[-1,1] = 'Z' # For single elements, the array is optional
+a[-2,2] = nil # Delete last 2 elements in 1.8; replace with nil in 1.9
+```
+
+In addition to the square bracket operator for indexing an array, the Array class defines
+a number of other useful operators. Use + to concatenate two arrays:
+```
+a = [1, 2, 3] + [4, 5] # [1, 2, 3, 4, 5]
+a = a + [[6, 7, 8]] # [1, 2, 3, 4, 5, [6, 7, 8]]
+a = a + 9 # Error: righthand side must be an array
+```
+The + operator creates a new array that contains the elements of both its operands. Use
+<< to append an element to the end of an existing array, and use concat to append the
+elements of an array:
+```
+a = [] # Start with an empty array
+a << 1 # a is [1]
+a << 2 << 3 # a is [1, 2, 3]
+a << [4,5,6] # a is [1, 2, 3, [4, 5, 6]]
+a.concat [7,8] # a is [1, 2, 3, [4, 5, 6], 7, 8]
+```
+The - operator subtracts one array from another. It begins by making a copy of its
+lefthand array, and then removes any elements from that copy if they appear anywhere
+in the righthand array:
+```
+['a', 'b', 'c', 'b', 'a'] - ['b', 'c', 'd'] # ['a', 'a']
+Like the String class, Array also uses the multiplication operator for repetition:
+a = [0] * 8 # [0, 0, 0, 0, 0, 0, 0, 0]
+```
+The Array class borrows the Boolean operators | and & and uses them for union and
+intersection. | concatenates its arguments and then removes all duplicate elements from
+the result. & returns an array that holds elements that appear in both of the operand
+arrays. The returned array does not contain any duplicate elements:
+```
+a = [1, 1, 2, 2, 3, 3, 4]
+b = [5, 5, 4, 4, 3, 3, 2]
+a | b # [1, 2, 3, 4, 5]: duplicates are removed
+b | a # [5, 4, 3, 2, 1]: elements are the same, but order is different
+a & b # [2, 3, 4]
+b & a # [4, 3, 2]
+```
+Note that these operators are not transitive: a|b is not the same as b|a, for example. If
+
+you ignore the ordering of the elements, however, and consider the arrays to be unor-
+dered sets, then these operators make more sense. Note also that the algorithm by which
+
+union and intersection are performed is not specified, and there are no guarantees about
+the order of the elements in the returned arrays.
+The Array class defines quite a few useful methods. The only one we’ll discuss here is
+the each iterator, used for looping through the elements of an array:
+a = ('A'..'Z').to_a # Begin with an array of letters
+a.each {|x| print x } # Print the alphabet, one letter at a time
+Other Array methods you may want to look up include clear, compact!, delete_if,
+each_index, empty?, fill, flatten!, include?, index, join, pop, push, reverse,
+reverse_each, rindex, shift, sort, sort!, uniq!, and unshift.
+
 ## Overridden Methods
 
 ```ruby
