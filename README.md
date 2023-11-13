@@ -221,6 +221,32 @@ ItalianWorldGreeter.new.greet
 ```
 https://ideone.com/a3DFTj
 
+## Marshaling Objects
+
+You can save the state of an object by passing it to the class method Marshal.dump.
+If you pass an I/O stream object as the second argument, Marshal.dump writes the state
+of the object (and, recursively, any objects it references) to that stream. Otherwise, it
+simply returns the encoded state as a binary string.
+To restore a marshaled object, pass a string or an I/O stream containing the object to
+Marshal.load.
+Marshaling an object is a very simple way to save its state for later use, and these meth-
+ods can be used to provide an automatic file format for Ruby programs. Note, however,
+
+that the binary format used by Marshal.dump and Marshal.load is version-dependent,
+and newer versions of Ruby are not guaranteed to be able to read marshaled objects
+written by older versions of Ruby.
+Another use for Marshal.dump and Marshal.load is to create deep copies of objects:
+```
+def deepcopy(o)
+Marshal.load(Marshal.dump(o))
+end
+```
+Note that files and I/O streams, as well as Method and Binding objects, are too dynamic
+to be marshaled; there would be no reliable way to restore their state.
+YAML (“YAML Ain’t Markup Language”) is a commonly used alternative to the
+Marshal module that dumps objects to (and loads objects from) a human-readable text
+format. It is in the standard library, and you must require 'yaml' to use it.
+
 
 # Examples
 (Extend Class Array with bubblesort)  https://ideone.com/85rdNd 
