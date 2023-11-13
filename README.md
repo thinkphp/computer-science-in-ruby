@@ -39,8 +39,31 @@ white = %W(\s \t \r \n) # Same as: ["\s", "\t", "\r", "\n"]
 ```
 %w and %W introduce an array literal, much like %q and %Q introduce a String literal. In
 particular, the delimiter rules for %w and %W are the same as for %q and %Q. Within the
-delimiters, no quotation marks are required around the array element strings, and no
+delimiters, no quotation marks are required around the array element strings, and no 
+commas are required between the elements. Array elements are delimited by whitespace.
 
+You can also create arrays with the Array.new constructor, and this provides options
+for programmatically initializing the array elements:
+
+```
+empty = Array.new # []: returns a new empty array
+nils = Array.new(3) # [nil, nil, nil]: new array with 3 nil elements
+zeros = Array.new(4, 0) # [0, 0, 0, 0]: new array with 4 0 elements
+copy = Array.new(nils) # Make a new copy of an existing array
+count = Array.new(3) {|i| i+1} # [1,2,3]: 3 elements computed from index
+```
+
+```
+To obtain the value of an array element, use a single integer within square brackets:
+a = [0, 1, 4, 9, 16] # Array holds the squares of the indexes
+a[0] # First element is 0
+a[-1] # Last element is 16
+a[-2] # Second to last element is 9
+a[a.size-1] # Another way to query the last element
+a[-a.size] # Another way to query the first element
+a[8] # Querying beyond the end returns nil
+a[-8] # Querying before the start returns nil, too
+```
 ## Overridden Methods
 
 ```ruby
