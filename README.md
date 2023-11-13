@@ -138,10 +138,8 @@ a & b # [2, 3, 4]
 b & a # [4, 3, 2]
 ```
 Note that these operators are not transitive: a|b is not the same as b|a, for example. If
-
 you ignore the ordering of the elements, however, and consider the arrays to be unor-
 dered sets, then these operators make more sense. Note also that the algorithm by which
-
 union and intersection are performed is not specified, and there are no guarantees about
 the order of the elements in the returned arrays.
 The Array class defines quite a few useful methods. The only one we’ll discuss here is
