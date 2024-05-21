@@ -248,10 +248,27 @@ Marshal module that dumps objects to (and loads objects from) a human-readable t
 format. It is in the standard library, and you must require 'yaml' to use it.
 
 
-# Examples
+#### Examples
 (Extend Class Array with bubblesort)  https://ideone.com/85rdNd 
 
-## References
+
+#### Programming Contests
+
+VK Cup 2015 - Wild Card Round 1 https://codeforces.com/contest/530
+
+Codeforces Alpha Round 20 https://codeforces.com/contest/20
+
+Experimental Educational Round: VolBIT Formulas Blitz https://codeforces.com/contest/630
+
+Codeforces Beta Round 82 (Div. 2) https://codeforces.com/contest/106
+
+Codeforces Round 486 (Div. 3) https://codeforces.com/contest/988
+
+Codeforces Round 907 (Div. 2) https://codeforces.com/contest/1891
+
+Codeforces Round 928 (Div. 4) https://codeforces.com/contest/1926
+
+#### References
 
 https://www.programming-books.io/essential/ruby/
 
