@@ -19,7 +19,7 @@
    3.2 [Inheritance](#32-inheritance)
    3.3 [Modules and Mixins](#33-modules-and-mixins)
 
-4.[Advanced Ruby Concepts](#4-advanced-ruby-concepts)
+4. [Advanced Ruby Concepts](#4-advanced-ruby-concepts)
 
    4.1 [Blocks, Procs, and Lambdas](#41-blocks-procs-and-lambdas)
    4.2 [Metaprogramming](#42-metaprogramming)
