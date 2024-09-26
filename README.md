@@ -2,23 +2,23 @@
 
 ## Table of Contents
 
-1. [Introduction to Ruby](1-introduction-to-ruby)
+1.[Introduction to Ruby](1-introduction-to-ruby)
    1.1 [History and Philosophy of Ruby](#11-history-and-philosophy-of-ruby)
    1.2 [Setting Up Ruby Environment](#12-setting-up-ruby-environment)
    1.3 [Interactive Ruby (IRB)](#13-interactive-ruby-irb)
 
-2. [Ruby Basics](#2-ruby-basics)
+2.[Ruby Basics](#2-ruby-basics)
    2.1 [Variables and Data Types](#21-variables-and-data-types)
    2.2 [Control Structures](#22-control-structures)
    2.3 [Methods](#23-methods)
    2.4 [Arrays and Hashes](#24-arrays-and-hashes)
 
-3. [Object-Oriented Programming in Ruby](#3-object-oriented-programming-in-ruby)
+3.[Object-Oriented Programming in Ruby](#3-object-oriented-programming-in-ruby)
    3.1 [Classes and Objects](#31-classes-and-objects)
    3.2 [Inheritance](#32-inheritance)
    3.3 [Modules and Mixins](#33-modules-and-mixins)
 
-4. [Advanced Ruby Concepts](#4-advanced-ruby-concepts)
+4.[Advanced Ruby Concepts](#4-advanced-ruby-concepts)
    4.1 [Blocks, Procs, and Lambdas](#41-blocks-procs-and-lambdas)
    4.2 [Metaprogramming](#42-metaprogramming)
    4.3 [Exception Handling](#43-exception-handling)
