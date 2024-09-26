@@ -1,13 +1,11 @@
 # Introduction to Ruby Programming - Stanford Course Outline
 
-## Table of Contents
-
-1.[Introduction to Ruby](1-introduction-to-ruby)
+1. [Introduction to Ruby](#1-introduction-to-ruby)
    1.1 [History and Philosophy of Ruby](#11-history-and-philosophy-of-ruby)
    1.2 [Setting Up Ruby Environment](#12-setting-up-ruby-environment)
    1.3 [Interactive Ruby (IRB)](#13-interactive-ruby-irb)
 
-2.[Ruby Basics](#2-ruby-basics)
+2. [Ruby Basics](#2-ruby-basics)
    2.1 [Variables and Data Types](#21-variables-and-data-types)
    2.2 [Control Structures](#22-control-structures)
    2.3 [Methods](#23-methods)
