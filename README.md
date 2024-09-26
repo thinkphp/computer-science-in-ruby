@@ -6,29 +6,33 @@
    1.2 [Setting Up Ruby Environment](#12-setting-up-ruby-environment)
    1.3 [Interactive Ruby (IRB)](#13-interactive-ruby-irb)
 
-3. [Ruby Basics](#2-ruby-basics)
+2. [Ruby Basics](#2-ruby-basics)
 
    2.1 [Variables and Data Types](#21-variables-and-data-types)
    2.2 [Control Structures](#22-control-structures)
    2.3 [Methods](#23-methods)
    2.4 [Arrays and Hashes](#24-arrays-and-hashes)
 
-5. [Object-Oriented Programming in Ruby](#3-object-oriented-programming-in-ruby)
+3. [Object-Oriented Programming in Ruby](#3-object-oriented-programming-in-ruby)
+
    3.1 [Classes and Objects](#31-classes-and-objects)
    3.2 [Inheritance](#32-inheritance)
    3.3 [Modules and Mixins](#33-modules-and-mixins)
 
 4.[Advanced Ruby Concepts](#4-advanced-ruby-concepts)
+
    4.1 [Blocks, Procs, and Lambdas](#41-blocks-procs-and-lambdas)
    4.2 [Metaprogramming](#42-metaprogramming)
    4.3 [Exception Handling](#43-exception-handling)
 
 5. [Ruby Standard Library and Gems](#5-ruby-standard-library-and-gems)
+
    5.1 [Working with Files](#51-working-with-files)
    5.2 [Date and Time Manipulation](#52-date-and-time-manipulation)
    5.3 [Using Gems](#53-using-gems)
 
 6. [Ruby in Practice](#6-ruby-in-practice)
+
    6.1 [Ruby for Web Development](#61-ruby-for-web-development)
    6.2 [Testing in Ruby](#62-testing-in-ruby)
    6.3 [Ruby Best Practices](#63-ruby-best-practices)
