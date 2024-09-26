@@ -1,3 +1,491 @@
+# Introduction to Ruby Programming - Stanford Course Outline
+
+## Table of Contents
+
+1. [Introduction to Ruby](#1-introduction-to-ruby)
+   1.1 [History and Philosophy of Ruby](#11-history-and-philosophy-of-ruby)
+   1.2 [Setting Up Ruby Environment](#12-setting-up-ruby-environment)
+   1.3 [Interactive Ruby (IRB)](#13-interactive-ruby-irb)
+
+2. [Ruby Basics](#2-ruby-basics)
+   2.1 [Variables and Data Types](#21-variables-and-data-types)
+   2.2 [Control Structures](#22-control-structures)
+   2.3 [Methods](#23-methods)
+   2.4 [Arrays and Hashes](#24-arrays-and-hashes)
+
+3. [Object-Oriented Programming in Ruby](#3-object-oriented-programming-in-ruby)
+   3.1 [Classes and Objects](#31-classes-and-objects)
+   3.2 [Inheritance](#32-inheritance)
+   3.3 [Modules and Mixins](#33-modules-and-mixins)
+
+4. [Advanced Ruby Concepts](#4-advanced-ruby-concepts)
+   4.1 [Blocks, Procs, and Lambdas](#41-blocks-procs-and-lambdas)
+   4.2 [Metaprogramming](#42-metaprogramming)
+   4.3 [Exception Handling](#43-exception-handling)
+
+5. [Ruby Standard Library and Gems](#5-ruby-standard-library-and-gems)
+   5.1 [Working with Files](#51-working-with-files)
+   5.2 [Date and Time Manipulation](#52-date-and-time-manipulation)
+   5.3 [Using Gems](#53-using-gems)
+
+6. [Ruby in Practice](#6-ruby-in-practice)
+   6.1 [Ruby for Web Development](#61-ruby-for-web-development)
+   6.2 [Testing in Ruby](#62-testing-in-ruby)
+   6.3 [Ruby Best Practices](#63-ruby-best-practices)
+
+## 1. Introduction to Ruby
+
+### 1.1 History and Philosophy of Ruby
+
+Ruby was created by Yukihiro Matsumoto (often called "Matz") in 1995. Its philosophy emphasizes programmer happiness and follows the principle of least astonishment.
+
+Examples:
+```ruby
+# Ruby's expressive syntax
+5.times { puts "Ruby is fun!" }
+
+# Everything is an object
+puts 5.class  # Output: Integer
+puts "Hello".class  # Output: String
+
+# Ruby's flexibility
+def say(word)
+  word.upcase + "!"
+end
+
+puts say "hello"  # Output: HELLO!
+puts say("hello")  # Output: HELLO!
+```
+
+### 1.2 Setting Up Ruby Environment
+
+Instructions for installing Ruby on different operating systems and setting up a development environment.
+
+### 1.3 Interactive Ruby (IRB)
+
+Introduction to using IRB for quick Ruby experimentation.
+
+Example:
+```ruby
+$ irb
+irb(main):001:0> 1 + 1
+=> 2
+irb(main):002:0> [1, 2, 3].map { |n| n * 2 }
+=> [2, 4, 6]
+```
+
+## 2. Ruby Basics
+
+### 2.1 Variables and Data Types
+
+Ruby is dynamically typed, with several basic data types.
+
+Examples:
+```ruby
+# Integer and Float
+age = 25
+pi = 3.14159
+
+# String
+name = "Ruby Programmer"
+interpolated = "My name is #{name}"
+
+# Symbol
+status = :active
+
+# Boolean
+is_student = true
+
+# Array
+fruits = ["apple", "banana", "cherry"]
+
+# Hash
+person = { name: "John", age: 30, city: "San Francisco" }
+```
+
+### 2.2 Control Structures
+
+Ruby provides various control structures for program flow.
+
+Examples:
+```ruby
+# If-else statement
+x = 10
+if x > 5
+  puts "x is greater than 5"
+elsif x < 5
+  puts "x is less than 5"
+else
+  puts "x is equal to 5"
+end
+
+# Unless statement
+unless x == 0
+  puts "x is not zero"
+end
+
+# Case statement
+grade = 'B'
+case grade
+when 'A' then puts "Excellent!"
+when 'B' then puts "Good job!"
+when 'C' then puts "Acceptable"
+else puts "Needs improvement"
+end
+
+# While loop
+counter = 0
+while counter < 5
+  puts "Counter is #{counter}"
+  counter += 1
+end
+
+# For loop
+for i in 1..5
+  puts "Iteration #{i}"
+end
+```
+
+### 2.3 Methods
+
+Methods in Ruby are defined using the `def` keyword.
+
+Examples:
+```ruby
+# Simple method
+def greet(name)
+  "Hello, #{name}!"
+end
+
+puts greet("Stanford")
+
+# Method with default parameter
+def power(base, exponent = 2)
+  base ** exponent
+end
+
+puts power(3)    # Output: 9
+puts power(2, 3) # Output: 8
+
+# Method with keyword arguments
+def create_user(name:, email:, age: nil)
+  "User: #{name}, Email: #{email}, Age: #{age || 'N/A'}"
+end
+
+puts create_user(name: "Alice", email: "alice@example.com")
+puts create_user(name: "Bob", email: "bob@example.com", age: 30)
+
+# Variable number of arguments
+def sum(*numbers)
+  numbers.reduce(0, :+)
+end
+
+puts sum(1, 2, 3, 4, 5) # Output: 15
+```
+
+### 2.4 Arrays and Hashes
+
+Arrays and hashes are fundamental data structures in Ruby.
+
+Examples:
+```ruby
+# Array operations
+numbers = [1, 2, 3, 4, 5]
+puts numbers.first
+puts numbers.last
+puts numbers.length
+numbers.push(6)
+numbers.pop
+
+# Array iteration
+numbers.each { |num| puts num * 2 }
+
+# Array transformation
+doubled = numbers.map { |num| num * 2 }
+
+# Hash operations
+person = { name: "Alice", age: 30, city: "New York" }
+puts person[:name]
+person[:occupation] = "Engineer"
+
+# Hash iteration
+person.each do |key, value|
+  puts "#{key}: #{value}"
+end
+
+# Hash transformation
+uppercase_person = person.transform_values(&:upcase)
+```
+
+## 3. Object-Oriented Programming in Ruby
+
+### 3.1 Classes and Objects
+
+Ruby is a pure object-oriented language.
+
+Examples:
+```ruby
+# Define a class
+class Car
+  attr_reader :make, :model
+  
+  def initialize(make, model)
+    @make = make
+    @model = model
+  end
+
+  def display_info
+    "This car is a #{@make} #{@model}."
+  end
+end
+
+# Create an object
+my_car = Car.new("Toyota", "Corolla")
+puts my_car.display_info
+puts my_car.make
+```
+
+### 3.2 Inheritance
+
+Ruby supports single inheritance.
+
+Example:
+```ruby
+class ElectricCar < Car
+  attr_reader :battery_capacity
+
+  def initialize(make, model, battery_capacity)
+    super(make, model)
+    @battery_capacity = battery_capacity
+  end
+
+  def display_info
+    "#{super} It has a battery capacity of #{@battery_capacity} kWh."
+  end
+end
+
+tesla = ElectricCar.new("Tesla", "Model 3", 75)
+puts tesla.display_info
+```
+
+### 3.3 Modules and Mixins
+
+Modules in Ruby are used for namespacing and as mixins.
+
+Examples:
+```ruby
+# Module as a namespace
+module Math
+  PI = 3.14159
+
+  def self.square(x)
+    x * x
+  end
+end
+
+puts Math::PI
+puts Math.square(4)
+
+# Module as a mixin
+module Swimmable
+  def swim
+    "#{self.class} is swimming!"
+  end
+end
+
+class Fish
+  include Swimmable
+end
+
+class Duck
+  include Swimmable
+end
+
+puts Fish.new.swim
+puts Duck.new.swim
+```
+
+## 4. Advanced Ruby Concepts
+
+### 4.1 Blocks, Procs, and Lambdas
+
+These are different ways of grouping code for reuse in Ruby.
+
+Examples:
+```ruby
+# Block
+[1, 2, 3].each do |num|
+  puts num * 2
+end
+
+# Proc
+square = Proc.new { |x| x * x }
+puts [1, 2, 3].map(&square)
+
+# Lambda
+multiply = ->(x, y) { x * y }
+puts multiply.call(3, 4)
+
+# Differences between Proc and Lambda
+def proc_return
+  proc = Proc.new { return "Proc returns" }
+  proc.call
+  "This line is never reached"
+end
+
+def lambda_return
+  lambda = -> { return "Lambda returns" }
+  lambda.call
+  "This line is reached"
+end
+
+puts proc_return
+puts lambda_return
+```
+
+### 4.2 Metaprogramming
+
+Ruby's metaprogramming capabilities allow you to write code that writes code.
+
+Examples:
+```ruby
+# Define method dynamically
+class String
+  define_method(:shout) do
+    self.upcase + "!"
+  end
+end
+
+puts "hello".shout  # Output: HELLO!
+
+# Open class
+class Integer
+  def double
+    self * 2
+  end
+end
+
+puts 5.double  # Output: 10
+
+# method_missing
+class MyClass
+  def method_missing(method_name, *args)
+    "You called #{method_name} with #{args}"
+  end
+end
+
+obj = MyClass.new
+puts obj.non_existent_method(1, 2, 3)
+```
+
+### 4.3 Exception Handling
+
+Ruby provides a mechanism to handle errors and exceptions.
+
+Example:
+```ruby
+def divide(a, b)
+  begin
+    result = a / b
+  rescue ZeroDivisionError => e
+    puts "Error: #{e.message}"
+    result = nil
+  ensure
+    puts "Division attempt completed"
+  end
+  result
+end
+
+puts divide(10, 2)
+puts divide(10, 0)
+```
+
+## 5. Ruby Standard Library and Gems
+
+### 5.1 Working with Files
+
+Ruby provides easy-to-use methods for file operations.
+
+Examples:
+```ruby
+# Reading a file
+File.open("example.txt", "r") do |file|
+  puts file.read
+end
+
+# Writing to a file
+File.open("output.txt", "w") do |file|
+  file.puts "Hello, Stanford!"
+end
+
+# Appending to a file
+File.open("log.txt", "a") do |file|
+  file.puts "Log entry at #{Time.now}"
+end
+```
+
+### 5.2 Date and Time Manipulation
+
+Ruby has built-in classes for working with dates and times.
+
+Example:
+```ruby
+require 'date'
+
+today = Date.today
+puts today
+puts today + 30  # 30 days from now
+
+now = Time.now
+puts now
+puts now + 3600  # 1 hour from now
+```
+
+### 5.3 Using Gems
+
+Gems are Ruby's package manager system. Here's how to use a popular gem like 'nokogiri' for XML/HTML parsing.
+
+Example:
+```ruby
+# First, install the gem: gem install nokogiri
+
+require 'nokogiri'
+require 'open-uri'
+
+# Parse HTML from a URL
+doc = Nokogiri::HTML(URI.open("https://www.stanford.edu"))
+puts doc.css('title').text
+
+# Create XML
+builder = Nokogiri::XML::Builder.new do |xml|
+  xml.root {
+    xml.child1 { xml.text "Child 1 content" }
+    xml.child2 { xml.text "Child 2 content" }
+  }
+end
+
+puts builder.to_xml
+```
+
+## 6. Ruby in Practice
+
+### 6.1 Ruby for Web Development
+
+Introduction to web development with Ruby, mentioning frameworks like Ruby on Rails and Sinatra.
+
+### 6.2 Testing in Ruby
+
+Overview of testing practices in Ruby, including unit testing with RSpec or Minitest.
+
+### 6.3 Ruby Best Practices
+
+Discussion of Ruby style guides, common idioms, and best practices for writing clean, efficient Ruby code.
+
+This course outline covers the fundamental concepts of Ruby programming, from basic syntax to advanced topics like metaprogramming. Each section includes multiple examples to illustrate the concepts. Students should practice these examples and explore further to gain a deeper understanding of Ruby.
+
+
+
+
 # Computer Science in Ruby language.
 
 Ruby is a dynamic programming language with a complex but expressive grammar and
