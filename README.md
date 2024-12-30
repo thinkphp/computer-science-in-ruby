@@ -843,8 +843,8 @@ Good Bye 2023 https://codeforces.com/contest/1916 Editorial: https://codeforces.
 ### EDU Codeforces
 https://codeforces.com/edu/courses
 
-#### References
+### References
 
-https://www.programming-books.io/essential/ruby/
-
-https://www.programming-books.io/essential/rubyonrails/
+- https://cs.lmu.edu/~ray/notes/introruby/
+- https://www.programming-books.io/essential/ruby/
+- https://www.programming-books.io/essential/rubyonrails/
